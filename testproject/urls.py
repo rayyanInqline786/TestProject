@@ -22,7 +22,7 @@ from django.conf import settings
 urlpatterns = [
     path('',views.index, name="index"),
     path('home/',views.home, name="home"),
-    path(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root':settings.STATIC_ROOT}),
+    path(r'^static/<str:path>/', 'django.views.static.serve', {'document_root':settings.STATIC_ROOT}),
     path('admin/', admin.site.urls),
 ]
 if settings.DEBUG:
