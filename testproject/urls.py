@@ -25,6 +25,8 @@ urlpatterns = [
     path('',views.index, name="index"),
     path('home/',views.home, name="home"),
     path('admin/', admin.site.urls),
+    
+    #for production
     url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}), 
     url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]
